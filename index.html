@@ -8,17 +8,41 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Junior Full Stack Developer</h1>
-      <p>With 6 years of experience in WordPress, SEO, and Digital Marketing</p>
-      <nav>
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
+  <header class="hero">
+  <div class="container">
+    <canvas id="main-canvas"></canvas>
+    <canvas id="text-canvas"></canvas>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <h1>Hi, I'm <span>Abhishek KC</span></h1>
+      <p class="tagline" id="typewriter-text">Building user-centric web solutions with passion and precision.</p>
+      <div class="cta-buttons">
+        <a href="resume.pdf" class="btn primary-btn" download>Download Resume</a>
+        <a href="#projects" class="btn secondary-btn">View Projects</a>
+      </div>
     </div>
-  </header>
+
+    <!-- Hero Image -->
+    <div class="hero-image">
+      <img src="images/abhishek-kc-animated.webp" alt="Abhishek KC" />
+    </div>
+    <!-- Interactive Bubbles -->
+    <div class="bubbles">
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+    </div>
+  </div>
+</header>
 
   <section id="about" class="about">
     <div class="container">
@@ -56,7 +80,7 @@
         </div>
         <div class="project">
           <h3>WebNetic Digital Solutions</h3>
-          <p>Implemented a dynamic and responsive corporate website from scratch.</p>
+          <p>Implemented a dynamic and responsive corporate website from WordPress.</p>
         </div>
       </div>
     </div>
@@ -80,26 +104,11 @@
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form id="contact-form" action="https://formspree.io/f/{your_form_id}" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
-
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-
-        <button type="submit">Send</button>
-    </form>
-</section>
-
   <footer>
     <p>&copy; 2025 Junior Full Stack Developer | Abhishek KC</p>
   </footer>
 
   <script src="script.js"></script>
+  <script src="particle.js"></script>
 </body>
 </html>
