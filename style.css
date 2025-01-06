@@ -183,19 +183,23 @@ form {
   gap: 1rem;
 }
 
-form input, form textarea, form button {
+form input,
+form textarea,
+form button {
   padding: 12px;
   font-size: 1rem;
   border: none;
   border-radius: 5px;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s;
 }
 
-form input:focus, form textarea:focus {
+form input:focus,
+form textarea:focus {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -239,13 +243,7 @@ footer {
   100% { transform: translateX(-50%) scale(1); }
 }
 
-/* General Styles */
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  color: #333;
-}
-
+/* Hero Section */
 .hero {
   display: flex;
   flex-direction: column;
@@ -257,7 +255,6 @@ body {
   padding: 20px;
 }
 
-/* Navigation Bar */
 .navbar {
   display: flex;
   justify-content: center;
@@ -277,7 +274,6 @@ body {
   color: #ff8c00;
 }
 
-/* Hero Content */
 .hero-content {
   text-align: center;
   margin-bottom: 20px;
@@ -328,14 +324,12 @@ body {
   color: #2575fc;
 }
 
-/* Hero Image */
 .hero-image img {
   max-width: 300px;
   border-radius: 50%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 2.5rem;
@@ -346,7 +340,6 @@ body {
   }
 }
 
-/* Hero content fade-in animation */
 .hero-content {
   opacity: 0;
   transform: translateY(20px);
@@ -358,46 +351,91 @@ body {
   transform: translateY(0);
 }
 
-
-.hero::before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 200px;
-  height: 200px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  z-index: 0;
-}
-
+.hero::before,
 .hero::after {
   content: "";
   position: absolute;
-  bottom: -50px;
-  left: -50px;
-  width: 300px;
-  height: 300px;
-  background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
   z-index: 0;
 }
 
-#main-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
+.hero::before {
+  top: 10%;
+  left: 20%;
+  width: 200px;
+  height: 200px;
+}
+
+.hero::after {
+  bottom: 10%;
+  right: 15%;
+  width: 300px;
+  height: 300px;
+}
+
+/* Skill Section */
+.skills {
+  padding: 4rem 0;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.skills h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.skill-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.skill-card i {
+  font-size: 3rem;
+  color: #4facfe;
+  margin-bottom: 1rem;
+}
+
+.skill-card h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.progress-bar {
   width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 25px;
+  height: 20px;
+}
+
+.progress {
   height: 100%;
-  z-index: 1;
+  border-radius: 25px;
+  background-color: #4facfe;
+  transition: width 0.5s ease-in-out;
 }
 
-#text-canvas {
-  display: none;
+.cta-buttons {
+  margin-top: 20px;
 }
 
-/* Adjust your existing hero content to appear above the canvas */
-.hero .container {
-  position: relative;
-  z-index: 2;
+.cta-buttons .btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-buttons .btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }

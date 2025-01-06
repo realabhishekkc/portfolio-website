@@ -58,3 +58,4 @@ document.addEventListener("DOMContentLoaded", () => {
     heroContent.classList.add("fade-in");
   }
 });
+
