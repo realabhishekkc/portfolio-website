@@ -439,3 +439,83 @@ footer {
   transform: translateY(-5px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px; /* Set equal width and height for a circle */
+  height: 50px;
+  background-color: #007bff; /* Button background color */
+  color: white; /* Text color */
+  border: none;
+  border-radius: 50%; /* Makes the button a circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensures the button stays on top */
+}
+
+.back-to-top:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.back-to-top.show {
+  display: flex; /* Make it visible when scrolling */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.back-to-top.hide {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* Work Experience Styles */
+.work-experience {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.work-experience h2 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.experience-item {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.experience-item h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.experience-item h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.experience-item p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.experience-item span {
+  font-style: italic;
+  font-size: 14px;
+  color: #999;
+}
