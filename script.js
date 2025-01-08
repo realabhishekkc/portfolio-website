@@ -9,13 +9,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Contact form submit alert
-  const form = document.querySelector("form");
+  // Contact form submission with AJAX
+  const form = document.getElementById("contact-form"); // Use ID for better specificity
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      alert("Thank you for reaching out! I will get back to you soon.");
-    });
+  
+      const formData = new FormData(form);
+  
+      fetch('contact.php', {
+          method: 'POST',
+          body: formData
+      })
+      .then(response => {
+          if (!response.ok) { // Check for HTTP errors (4xx or 5xx)
+              return response.text().then(text => { throw new Error(text) }); // Throw error with the error message from PHP
+          }
+          return response.text();
+      })
+      .then(data => {
+          alert(data);
+          if (data === "Message sent successfully!") {
+              form.reset();
+          }
+      })
+      .catch(error => {
+          console.error("Fetch Error:", error); // Log the full error object
+          alert("An error occurred: " + error.message); // Display a more user-friendly error
+      });
+      });
   }
 
   // Load theme on page load
