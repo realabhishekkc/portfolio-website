@@ -1,13 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Dark theme toggle
-  const themeToggleButton = document.getElementById("theme-toggle");
-  if (themeToggleButton) {
-    themeToggleButton.addEventListener("click", () => {
-      document.body.classList.toggle("dark-theme");
-      const theme = document.body.classList.contains("dark-theme") ? "dark-theme" : "light-theme";
-      localStorage.setItem("theme", theme);
-    });
-  }
 
   // Contact form submission with AJAX
   const form = document.getElementById("contact-form"); // Use ID for better specificity
@@ -38,12 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
           alert("An error occurred: " + error.message); // Display a more user-friendly error
       });
       });
-  }
-
-  // Load theme on page load
-  const currentTheme = localStorage.getItem("theme");
-  if (currentTheme) {
-    document.body.classList.add(currentTheme);
   }
 
   // Typewriter effect
@@ -100,3 +85,4 @@ backToTopButton.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+
